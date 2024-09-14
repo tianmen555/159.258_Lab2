@@ -1,0 +1,191 @@
+﻿@charset "UTF-8"; /* Definition of the character encoding */
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 4
+   
+   Great Lakescape Lodge Style Sheet
+   Author: Tian Chenmeng
+   Date: 2024.09.13
+   
+   Filename: lake_styles.css
+
+*/
+
+
+/* Application of a web font */
+@font-face {
+  font-family: cac;
+  src: url('cac_champagne.woff');
+}
+@font-face {
+  font-family: D;
+  src: url('DobkinPlain.woff');
+}
+
+
+/* Apply global styles */
+body {
+  margin: 0,20px;
+  padding: 0;
+  /* Setting text colours using colour name. */
+  color: white; 
+  /* Setting background using colour value. */
+  background-color: #9dac57;
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+   "header header"
+   "main aside"
+   "footer footer";
+  gap: 0;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+/* Style the header */
+header {
+  grid-area: header;
+  background: #903d8a;
+  color: #fff;
+  text-align: center;
+}
+header img {
+  max-width: 100%;
+  height: auto;
+}
+header nav{
+   padding: 10px;
+}
+
+
+/* Style the main content area */
+/* Selectors showing style rules applied 
+to elements based on the id attribute. */
+section#leftcol {
+  grid-area: main;
+  background: #222121;
+}
+section#leftcol h1{
+   font-family: cac;
+   font-size: 60px;
+   padding: 0 10px;
+}
+/*modify the padding space and 
+margin space around an element. */
+section#leftcol p{
+   padding: 10px 20px;
+   margin: 10px auto;
+}
+
+section#leftcol aside.notes h1{
+   font-family: sans-serif;
+   text-align: center;
+   font-size: 20px;
+   padding: 0 20px;
+}
+section#leftcol aside.notes ul{
+   padding: auto 20px;
+}
+/* Selectors showing style rules applied to nested elements */
+section#leftcol aside.notes ul li a {
+   color: #dda3ca; 
+}
+
+section#leftcol aside.events h1{
+   font-family: sans-serif;
+   text-align: center;
+   font-size: 20px;
+   padding: 0 20px;
+}
+section#leftcol aside.events h2{
+   font-size: 15px;
+   padding: 0 10px;
+}
+section#leftcol aside.events p{
+   padding: auto 20px;
+}
+
+.notes {
+   background-color: #875a6e; 
+}
+.events {
+   background-color: #a4a871; 
+}
+ 
+
+/* Style the aside area */
+section#rightcol {
+  grid-area: aside;
+  background: #70135a;
+  
+}
+section#rightcol h2{
+   font-family: cac;
+   position: relative;
+   left: 40px; 
+   font-size: 30px;
+}
+blockquote {
+   color:#d95edb;
+   position: relative;
+   top: 50px;
+}
+/* Add quotation marks to the blockquote reference */
+/* Use of pseudo-elements as selectors. */
+/* A style rule that generates content in the rendered page. */
+blockquote::before {
+   content: "“";
+   font-size: 3em;
+   color: #d95edb;
+   position: absolute;
+   left: -50px;
+   top: -15px;
+}
+blockquote::after {
+   content: "”";
+   font-size: 3em;
+   color: #d95edb;
+   position: absolute;
+   right: 50px;
+   bottom: -30px;
+}
+
+
+/* Style the navigation */
+/* modify the appearance of lists and list markers */
+nav ul {
+  list-style-type: none;
+  padding: auto,auto;
+  margin: 20px;
+  display: grid;
+  justify-content: left;
+}
+/* Selectors showing style rules applied to child elements */
+nav a {
+   /* An application of semi-transparent colour. */
+   color:rgba(255, 255, 255, 0.5);
+   text-decoration: none;
+   display: grid;
+}
+/* Use of pseudo-classes as selectors. */
+nav a:hover {
+   background: #002244;
+}
+
+
+/* Style the footer */
+footer {
+   grid-area: footer;
+   /*background: #37383a;*/
+   color: #fff;
+   padding: 10px;
+   text-align: center;
+   background: rgba(55, 56, 58, 0.9);
+ }
